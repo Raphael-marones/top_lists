@@ -7,13 +7,20 @@
     android:orientation="vertical"
     android:weightSum="3">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_weight="1"
         >
+        <TextView
+            android:layout_centerInParent="true"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:text="Most_voted_for_list_AREA"/>
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -43,12 +50,29 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
 
+            <TextView
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:text="Top_Movies_AREA"/>
+
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@color/colorAccent">
+
+            <TextView
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="Top_Books_List_AREA"/>
 
         </RelativeLayout>
 
