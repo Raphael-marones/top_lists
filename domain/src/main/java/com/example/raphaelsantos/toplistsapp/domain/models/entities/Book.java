@@ -7,25 +7,23 @@ import android.os.Parcelable;
  * Created by raphaelsantos on 12/22/17.
  */
 
-public class Series implements Parcelable {
+public class Book implements Parcelable {
 
     private String name;
 
-    private String mainDirector;
+    private String genre;
+
+    private String sinopses;
+
+    private String author;
 
     private String dateRelease;
-
-    private int numberSeasons;
 
     private String horizontalImageUrl;
 
     private String verticalImageUrl;
 
     private Boolean isFavorited = false;
-
-    private Boolean isFinished = true;
-
-    private Boolean wasCanceled = true;
 
     private Boolean isAddedToWishlist = false;
 
@@ -37,12 +35,28 @@ public class Series implements Parcelable {
         this.name = name;
     }
 
-    public String getMainDirector() {
-        return mainDirector;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setMainDirector(String mainDirector) {
-        this.mainDirector = mainDirector;
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public String getSinopses() {
+        return sinopses;
+    }
+
+    public void setSinopses(String sinopses) {
+        this.sinopses = sinopses;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public String getDateRelease() {
@@ -51,14 +65,6 @@ public class Series implements Parcelable {
 
     public void setDateRelease(String dateRelease) {
         this.dateRelease = dateRelease;
-    }
-
-    public int getNumberSeasons() {
-        return numberSeasons;
-    }
-
-    public void setNumberSeasons(int numberSeasons) {
-        this.numberSeasons = numberSeasons;
     }
 
     public String getHorizontalImageUrl() {
@@ -85,22 +91,6 @@ public class Series implements Parcelable {
         isFavorited = favorited;
     }
 
-    public Boolean getFinished() {
-        return isFinished;
-    }
-
-    public void setFinished(Boolean finished) {
-        isFinished = finished;
-    }
-
-    public Boolean getWasCanceled() {
-        return wasCanceled;
-    }
-
-    public void setWasCanceled(Boolean wasCanceled) {
-        this.wasCanceled = wasCanceled;
-    }
-
     public Boolean getAddedToWishlist() {
         return isAddedToWishlist;
     }
@@ -108,7 +98,6 @@ public class Series implements Parcelable {
     public void setAddedToWishlist(Boolean addedToWishlist) {
         isAddedToWishlist = addedToWishlist;
     }
-
 
     @Override
     public int describeContents() {
@@ -118,42 +107,40 @@ public class Series implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.name);
-        dest.writeString(this.mainDirector);
+        dest.writeString(this.genre);
+        dest.writeString(this.sinopses);
+        dest.writeString(this.author);
         dest.writeString(this.dateRelease);
-        dest.writeInt(this.numberSeasons);
         dest.writeString(this.horizontalImageUrl);
         dest.writeString(this.verticalImageUrl);
         dest.writeValue(this.isFavorited);
-        dest.writeValue(this.isFinished);
-        dest.writeValue(this.wasCanceled);
         dest.writeValue(this.isAddedToWishlist);
     }
 
-    public Series() {
+    public Book() {
     }
 
-    protected Series(Parcel in) {
+    protected Book(Parcel in) {
         this.name = in.readString();
-        this.mainDirector = in.readString();
+        this.genre = in.readString();
+        this.sinopses = in.readString();
+        this.author = in.readString();
         this.dateRelease = in.readString();
-        this.numberSeasons = in.readInt();
         this.horizontalImageUrl = in.readString();
         this.verticalImageUrl = in.readString();
         this.isFavorited = (Boolean) in.readValue(Boolean.class.getClassLoader());
-        this.isFinished = (Boolean) in.readValue(Boolean.class.getClassLoader());
-        this.wasCanceled = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.isAddedToWishlist = (Boolean) in.readValue(Boolean.class.getClassLoader());
     }
 
-    public static final Parcelable.Creator<Series> CREATOR = new Parcelable.Creator<Series>() {
+    public static final Parcelable.Creator<Book> CREATOR = new Parcelable.Creator<Book>() {
         @Override
-        public Series createFromParcel(Parcel source) {
-            return new Series(source);
+        public Book createFromParcel(Parcel source) {
+            return new Book(source);
         }
 
         @Override
-        public Series[] newArray(int size) {
-            return new Series[size];
+        public Book[] newArray(int size) {
+            return new Book[size];
         }
     };
 }
