@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="50dp"
+    android:layout_width="match_parent">
+
+    <item
+        android:id="@+id/tab_highlight"
+        android:icon="@drawable/ic_star"
+        android:title="highlights"
+        android:showAsAction="always"/>
+    <item
+        android:id="@+id/tab_movie_series"
+        android:icon="@drawable/"
+        android:title="Movies and Series"
+        android:showAsAction="always"/>
+    <item
+        android:id="@+id/tab_books"
+        android:icon="@drawable/"
+        android:title="Books"
+        android:showAsAction="always"/>
+    <item
+        android:id="@+id/tab_account"
+        android:icon="@drawable/"
+        android:title="User Profile"
+        android:showAsAction="always"/>
+</menu>
